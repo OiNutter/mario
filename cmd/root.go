@@ -56,10 +56,11 @@ func initConfig() {
 		home, err := os.UserHomeDir()
 		cobra.CheckErr(err)
 
-		// Search config in home directory with name ".cobra" (without extension).
+		// Search config in home directory with name ".mario" (without extension).
 		viper.AddConfigPath(home)
 		viper.SetConfigType("yaml")
 		viper.SetConfigName(".mario")
+		viper.SafeWriteConfig()
 	}
 
 	viper.AutomaticEnv()
